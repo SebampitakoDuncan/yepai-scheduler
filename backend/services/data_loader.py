@@ -9,8 +9,22 @@ from models.shift import ShiftType
 class DataLoader:
     """Load employee, store, and availability data from Excel/CSV files."""
     
-    def __init__(self, data_dir: str = ".."):
-        self.data_dir = Path(data_dir)
+    def __init__(self, data_dir: str = None):
+        if data_dir is None:
+            # Try multiple locations: data/ folder, parent directory, or current directory
+            possible_dirs = [
+                Path(__file__).parent.parent / "data",  # backend/data/
+                Path(__file__).parent.parent.parent,    # project root
+                Path(__file__).parent.parent,            # backend/
+            ]
+            for dir_path in possible_dirs:
+                if (dir_path / "employee_availability_2weeks.xlsx").exists():
+                    self.data_dir = dir_path
+                    break
+            else:
+                self.data_dir = Path(__file__).parent.parent.parent  # Default to project root
+        else:
+            self.data_dir = Path(data_dir)
     
     def load_staff_estimates(self) -> pd.DataFrame:
         """Load store structure and staff estimates."""

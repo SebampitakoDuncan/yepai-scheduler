@@ -35,6 +35,8 @@ app.add_middleware(
 
 # Initialize orchestrator
 orchestrator = OrchestratorAgent()
+# Data files are in project root (one level up from backend)
+# On Render, root directory is 'backend', so go up one level
 data_loader = DataLoader(data_dir=str(Path(__file__).parent.parent.parent))
 
 
