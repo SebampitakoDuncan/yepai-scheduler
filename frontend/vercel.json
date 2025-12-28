@@ -7,7 +7,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://yepai-scheduler-backend.onrender.com/api/$1"
+      "destination": "https://yepai-scheduler.onrender.com/api/$1"
     }
   ]
 }
