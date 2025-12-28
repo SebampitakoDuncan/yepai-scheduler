@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Speedee:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Official McDonald's Australia Brand Colors */
+  --mcd-yellow: #FFCC00;
+  --mcd-yellow-dark: #E6B800;
+  --mcd-yellow-light: #FFE066;
+  --mcd-red: #DA291C;
+  --mcd-red-dark: #C41E12;
+  --mcd-red-light: #E84C3D;
+  --mcd-white: #FFFFFF;
+  --mcd-black: #292929;
+  
+  /* Supporting neutrals */
+  --mcd-gray-50: #F7F7F7;
+  --mcd-gray-100: #EFEFEF;
+  --mcd-gray-200: #E0E0E0;
+  --mcd-gray-300: #C4C4C4;
+  --mcd-gray-400: #A0A0A0;
+  --mcd-gray-500: #6E6E6E;
+  --mcd-gray-600: #4A4A4A;
+  --mcd-gray-700: #333333;
+  
+  /* Semantic colors */
+  --success: #27AE60;
+  --warning: #F39C12;
+  --danger: #E74C3C;
+  --info: #3498DB;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--mcd-white);
+  min-height: 100vh;
+  color: var(--mcd-black);
+}
+
+/* ============================================
+   HEADER - McDonald's Style
+   ============================================ */
+.header-mcd {
+  background: var(--mcd-white);
+  border-bottom: 1px solid var(--mcd-gray-200);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   CARDS - Clean McDonald's Style
+   ============================================ */
+.card-mcd {
+  background: var(--mcd-white);
+  border: 1px solid var(--mcd-gray-200);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.card-mcd-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--mcd-gray-200);
+  background: var(--mcd-gray-50);
+}
+
+.card-mcd-body {
+  padding: 20px;
+}
+
+/* ============================================
+   BUTTONS - McDonald's Primary & Secondary
+   ============================================ */
+.btn-mcd-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--mcd-yellow);
+  color: var(--mcd-black);
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-mcd-primary:hover {
+  background: var(--mcd-yellow-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-mcd-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-mcd-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-mcd-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--mcd-white);
+  color: var(--mcd-black);
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid var(--mcd-gray-300);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mcd-secondary:hover {
+  background: var(--mcd-gray-50);
+  border-color: var(--mcd-gray-400);
+}
+
+.btn-mcd-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--mcd-red);
+  color: var(--mcd-white);
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-mcd-red:hover {
+  background: var(--mcd-red-dark);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   INPUTS - McDonald's Style
+   ============================================ */
+.input-mcd {
+  padding: 10px 14px;
+  background: var(--mcd-white);
+  border: 1px solid var(--mcd-gray-300);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--mcd-black);
+  transition: all 0.2s ease;
+}
+
+.input-mcd:focus {
+  outline: none;
+  border-color: var(--mcd-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+}
+
+select.input-mcd {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236E6E6E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* ============================================
+   TABLE - McDonald's Clean Style
+   ============================================ */
+.table-mcd {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-mcd th {
+  background: var(--mcd-gray-50);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--mcd-gray-500);
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--mcd-gray-200);
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table-mcd td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--mcd-gray-100);
+  font-size: 13px;
+  color: var(--mcd-black);
+}
+
+.table-mcd tbody tr:hover {
+  background: var(--mcd-gray-50);
+}
+
+.table-mcd tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ============================================
+   SHIFT PILLS - McDonald's Color Coded
+   ============================================ */
+.shift-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 28px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: transform 0.15s ease;
+}
+
+.shift-pill:hover {
+  transform: scale(1.05);
+}
+
+/* Morning shifts - McDonald's Yellow */
+.shift-am {
+  background: rgba(255, 204, 0, 0.15);
+  color: #996600;
+  border: 1px solid rgba(255, 204, 0, 0.4);
+}
+
+/* Afternoon/Evening shifts - McDonald's Red tint */
+.shift-pm {
+  background: rgba(218, 41, 28, 0.1);
+  color: var(--mcd-red);
+  border: 1px solid rgba(218, 41, 28, 0.25);
+}
+
+/* Full day shifts - Success green */
+.shift-full {
+  background: rgba(39, 174, 96, 0.1);
+  color: #1B7A45;
+  border: 1px solid rgba(39, 174, 96, 0.3);
+}
+
+/* Regular shifts */
+.shift-day {
+  background: rgba(52, 152, 219, 0.1);
+  color: #2471A3;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+/* Day off */
+.shift-off {
+  background: var(--mcd-gray-100);
+  color: var(--mcd-gray-400);
+  border: 1px solid var(--mcd-gray-200);
+}
+
+/* ============================================
+   BADGES - McDonald's Style
+   ============================================ */
+.badge-mcd {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-mcd-success {
+  background: rgba(39, 174, 96, 0.12);
+  color: #1B7A45;
+}
+
+.badge-mcd-warning {
+  background: rgba(243, 156, 18, 0.12);
+  color: #B8860B;
+}
+
+.badge-mcd-danger {
+  background: rgba(231, 76, 60, 0.12);
+  color: #C0392B;
+}
+
+.badge-mcd-neutral {
+  background: var(--mcd-gray-100);
+  color: var(--mcd-gray-600);
+}
+
+.badge-mcd-yellow {
+  background: rgba(255, 204, 0, 0.2);
+  color: #996600;
+}
+
+.badge-mcd-red {
+  background: rgba(218, 41, 28, 0.12);
+  color: var(--mcd-red);
+}
+
+/* ============================================
+   STAT CARDS - McDonald's Style
+   ============================================ */
+.stat-card-mcd {
+  background: var(--mcd-white);
+  border: 1px solid var(--mcd-gray-200);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: all 0.2s ease;
+}
+
+.stat-card-mcd:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--mcd-gray-300);
+}
+
+.stat-card-mcd-highlight {
+  border-left: 4px solid var(--mcd-yellow);
+}
+
+.stat-card-mcd-success {
+  border-left: 4px solid var(--success);
+}
+
+.stat-card-mcd-warning {
+  border-left: 4px solid var(--warning);
+}
+
+.stat-card-mcd-danger {
+  border-left: 4px solid var(--danger);
+}
+
+/* ============================================
+   SIDEBAR PANELS
+   ============================================ */
+.panel-mcd {
+  background: var(--mcd-white);
+  border: 1px solid var(--mcd-gray-200);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.panel-mcd-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--mcd-gray-200);
+  background: var(--mcd-gray-50);
+}
+
+.panel-mcd-body {
+  padding: 16px;
+}
+
+/* ============================================
+   ICON CONTAINERS
+   ============================================ */
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.icon-box-yellow {
+  background: rgba(255, 204, 0, 0.15);
+  color: #996600;
+}
+
+.icon-box-red {
+  background: rgba(218, 41, 28, 0.1);
+  color: var(--mcd-red);
+}
+
+.icon-box-success {
+  background: rgba(39, 174, 96, 0.1);
+  color: #1B7A45;
+}
+
+.icon-box-warning {
+  background: rgba(243, 156, 18, 0.1);
+  color: #B8860B;
+}
+
+.icon-box-neutral {
+  background: var(--mcd-gray-100);
+  color: var(--mcd-gray-500);
+}
+
+/* ============================================
+   WEEKEND HIGHLIGHT
+   ============================================ */
+.weekend-col {
+  background: rgba(255, 204, 0, 0.05) !important;
+}
+
+.weekend-header {
+  color: #996600 !important;
+  background: rgba(255, 204, 0, 0.08) !important;
+}
+
+/* ============================================
+   MANAGER BADGE
+   ============================================ */
+.manager-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: var(--mcd-yellow);
+  color: var(--mcd-black);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ============================================
+   AVATAR
+   ============================================ */
+.avatar-mcd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.avatar-mcd-manager {
+  background: linear-gradient(135deg, var(--mcd-yellow) 0%, var(--mcd-yellow-dark) 100%);
+  color: var(--mcd-black);
+}
+
+.avatar-mcd-crew {
+  background: var(--mcd-gray-100);
+  color: var(--mcd-gray-600);
+  border: 1px solid var(--mcd-gray-200);
+}
+
+/* ============================================
+   LOGO BOX
+   ============================================ */
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--mcd-red) 0%, var(--mcd-red-dark) 100%);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.empty-state-icon {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--mcd-yellow) 0%, var(--mcd-yellow-dark) 100%);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  margin: 0 auto 32px;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mcd-gray-100);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mcd-gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mcd-gray-400);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes pulse-yellow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 204, 0, 0); }
+}
+
+.animate-pulse-yellow {
+  animation: pulse-yellow 2s infinite;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.text-mcd-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--mcd-black);
+  letter-spacing: -0.5px;
+}
+
+.text-mcd-subtitle {
+  font-size: 14px;
+  color: var(--mcd-gray-500);
+}
+
+.text-mcd-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--mcd-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
