@@ -38,6 +38,7 @@ app.add_middleware(
         "https://frontend-ecru-nine-41.vercel.app",
         "https://frontend-duncansebampitako-7785s-projects.vercel.app",
     ],
+    allow_origin_regex=r"https://.*\.vercel\.app",  # Allow all Vercel deployments
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
