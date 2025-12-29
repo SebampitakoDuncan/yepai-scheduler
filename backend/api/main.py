@@ -33,7 +33,10 @@ app.add_middleware(
         "http://localhost:3000",
         "https://frontend-j6a8a9f1b-duncansebampitako-7785s-projects.vercel.app",
         "https://frontend-iznanfkss-duncansebampitako-7785s-projects.vercel.app",
-        "https://*.vercel.app",  # Allow all Vercel preview deployments
+        "https://frontend-ow89ddqiz-duncansebampitako-7785s-projects.vercel.app",
+        "https://frontend-geg5byqmk-duncansebampitako-7785s-projects.vercel.app",
+        "https://frontend-ecru-nine-41.vercel.app",
+        "https://frontend-duncansebampitako-7785s-projects.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
